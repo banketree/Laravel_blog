@@ -7,8 +7,7 @@
 
 1、配置public为网站入口目录
 2、熟悉laravel的文档内容
-3、有基础的同学可以走一下快速入门教程的两个例子
-
+3、有基础的同学可以走一下快速入门教程的两个例子
 
 http://laravelacademy.org/laravel-docs-5_2
 
@@ -20,3 +19,124 @@ http://laravelacademy.org/post/2784.html
 4--------------------->
 
 
+
+
+
+
+5--------------------->
+
+Chome安装路由调试神器PostMan
+
+
+
+6--------------------->
+
+php artisan make:controller HomeController
+
+1、手动创建一个控制器
+2、使用artisan命令创建一个控制器
+3、路由访问控制器，移动控制器到目录
+
+Route::get('test', 'Admin\IndexController@index');
+
+
+
+7--------------------->
+
+路由分组
+? 1、命名空间
+? 2、路由前缀
+? 3、子域名路由
+? 4、中间件
+RESTful 资源控制器
+? 1、资源路由设置
+? 2、artisan命令查看资源路由
+
+1、成功配置出一个文章管理的资源路由
+2、使用路由分组的方式配置出项目的后台路由雏形
+
+
+Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>['web','admin.login']], function () {
+//    Route::get('login','IndexController@login');
+    Route::get('index','IndexController@index');
+    Route::resource('article', 'ArticleController');
+});
+
+
+//Route::get('admin/login','Admin\IndexController@login');
+//Route::get('admin/index','Admin\IndexController@index');
+
+
+//Route::get('test','Admin\IndexController@index');
+
+
+//Route::get('user', ['as' => 'profile', function () {
+//    echo route('profile');  //http://blog.hd/user
+//    return '<h1>命名路由</h1>';
+//}]);
+//
+//Route::get('test', [
+//    'as' => 'profile', 'uses' => 'Admin\IndexController@index'
+//]);
+
+//Route::get('test', 'Admin\IndexController@index')->name('profile');
+
+//Route::get('test','Admin\IndexController@index');
+
+
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('admin/login','Admin\IndexController@login');
+
+    Route::get('/',function(){
+        session(['key'=>456]);
+        return view('welcome');
+    });
+
+    Route::get('/test',function(){
+        echo session('key');
+        return 'test';
+    });
+});
+
+
+
+
+8--------------------->
+
+自己写一个登陆认证的中间件
+
+
+
+9--------------------->
+
+数据传递
+? 1、with
+? 2、传参
+? 3、compact
+
+1、自己完成一个完整的请求过程
+2、使用不同的方法实现传参
+
+
+class ViewController extends Controller
+{
+    public function index()
+    {
+//        $name = "陈华";
+//        $age = 26;
+        $data = [
+            'name' => "华仔",
+            'age' => 26
+        ];
+
+        $title = "陈老师正在讲解laravel课程";
+
+        return view('my_laravel',compact('data','title'));
+
+//        return view('my_laravel')->with('name',$name)->with('age',$age);
+    }
+}
+
+
+10--------------------->
