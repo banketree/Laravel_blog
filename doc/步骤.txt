@@ -18,9 +18,17 @@ http://laravelacademy.org/post/2784.html
 
 4--------------------->
 
+ Route::get($uri, $callback); 
+ Route::post($uri, $callback); 
+ Route::put($uri, $callback); 
+ Route::patch($uri, $callback); 
+ Route::delete($uri, $callback); 
+ Route::options($uri, $callback);
+ Route::match(['get', 'post'], '/', $callback); 
+ Route::any('foo', $callback);
 
-
-
+ 1、安装postman插件 
+ 2、用postman测试请求以上各类请求
 
 
 5--------------------->
