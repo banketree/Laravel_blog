@@ -1,39 +1,42 @@
 2--------------------->
 
-1¡¢ÅäÖÃcompose
+1ã€é…ç½®compose
 
 
 3--------------------->
 
-1¡¢ÅäÖÃpublicÎªÍøÕ¾Èë¿ÚÄ¿Â¼
-2¡¢ÊìÏ¤laravelµÄÎÄµµÄÚÈİ
-3¡¢ÓĞ»ù´¡µÄÍ¬Ñ§¿ÉÒÔ×ßÒ»ÏÂ¿ìËÙÈëÃÅ½Ì³ÌµÄÁ½¸öÀı×Ó
+1ã€é…ç½®publicä¸ºç½‘ç«™å…¥å£ç›®å½•
+
+2ã€ç†Ÿæ‚‰laravelçš„æ–‡æ¡£å†…å®¹
+
+3ã€æœ‰åŸºç¡€çš„åŒå­¦å¯ä»¥èµ°ä¸€ä¸‹å¿«é€Ÿå…¥é—¨æ•™ç¨‹çš„ä¸¤ä¸ªä¾‹å­
 
 http://laravelacademy.org/laravel-docs-5_2
 
-https://laravel.com/docs/5.2
+
+https://laravel.com/docs/5.2
 
 http://laravelacademy.org/post/2784.html
 
 
 4--------------------->
 
- Route::get($uri, $callback); 
- Route::post($uri, $callback); 
- Route::put($uri, $callback); 
- Route::patch($uri, $callback); 
- Route::delete($uri, $callback); 
+ Route::get($uri, $callback);
+ Route::post($uri, $callback);
+ Route::put($uri, $callback);
+ Route::patch($uri, $callback);
+ Route::delete($uri, $callback);
  Route::options($uri, $callback);
- Route::match(['get', 'post'], '/', $callback); 
+ Route::match(['get', 'post'], '/', $callback);
  Route::any('foo', $callback);
 
- 1¡¢°²×°postman²å¼ş 
- 2¡¢ÓÃpostman²âÊÔÇëÇóÒÔÉÏ¸÷ÀàÇëÇó
+ 1ã€å®‰è£…postmanæ’ä»¶
+ 2ã€ç”¨postmanæµ‹è¯•è¯·æ±‚ä»¥ä¸Šå„ç±»è¯·æ±‚
 
 
 5--------------------->
 
-Chome°²×°Â·ÓÉµ÷ÊÔÉñÆ÷PostMan
+Chomeå®‰è£…è·¯ç”±è°ƒè¯•ç¥å™¨PostMan
 
 
 
@@ -41,9 +44,9 @@ Chome°²×°Â·ÓÉµ÷ÊÔÉñÆ÷PostMan
 
 php artisan make:controller HomeController
 
-1¡¢ÊÖ¶¯´´½¨Ò»¸ö¿ØÖÆÆ÷
-2¡¢Ê¹ÓÃartisanÃüÁî´´½¨Ò»¸ö¿ØÖÆÆ÷
-3¡¢Â·ÓÉ·ÃÎÊ¿ØÖÆÆ÷£¬ÒÆ¶¯¿ØÖÆÆ÷µ½Ä¿Â¼
+1ã€æ‰‹åŠ¨åˆ›å»ºä¸€ä¸ªæ§åˆ¶å™¨
+2ã€ä½¿ç”¨artisanå‘½ä»¤åˆ›å»ºä¸€ä¸ªæ§åˆ¶å™¨
+3ã€è·¯ç”±è®¿é—®æ§åˆ¶å™¨ï¼Œç§»åŠ¨æ§åˆ¶å™¨åˆ°ç›®å½•
 
 Route::get('test', 'Admin\IndexController@index');
 
@@ -51,17 +54,17 @@ Route::get('test', 'Admin\IndexController@index');
 
 7--------------------->
 
-Â·ÓÉ·Ö×é
-? 1¡¢ÃüÃû¿Õ¼ä
-? 2¡¢Â·ÓÉÇ°×º
-? 3¡¢×ÓÓòÃûÂ·ÓÉ
-? 4¡¢ÖĞ¼ä¼ş
-RESTful ×ÊÔ´¿ØÖÆÆ÷
-? 1¡¢×ÊÔ´Â·ÓÉÉèÖÃ
-? 2¡¢artisanÃüÁî²é¿´×ÊÔ´Â·ÓÉ
+è·¯ç”±åˆ†ç»„
+? 1ã€å‘½åç©ºé—´
+? 2ã€è·¯ç”±å‰ç¼€
+? 3ã€å­åŸŸåè·¯ç”±
+? 4ã€ä¸­é—´ä»¶
+RESTful èµ„æºæ§åˆ¶å™¨
+? 1ã€èµ„æºè·¯ç”±è®¾ç½®
+? 2ã€artisanå‘½ä»¤æŸ¥çœ‹èµ„æºè·¯ç”±
 
-1¡¢³É¹¦ÅäÖÃ³öÒ»¸öÎÄÕÂ¹ÜÀíµÄ×ÊÔ´Â·ÓÉ
-2¡¢Ê¹ÓÃÂ·ÓÉ·Ö×éµÄ·½Ê½ÅäÖÃ³öÏîÄ¿µÄºóÌ¨Â·ÓÉ³ûĞÎ
+1ã€æˆåŠŸé…ç½®å‡ºä¸€ä¸ªæ–‡ç« ç®¡ç†çš„èµ„æºè·¯ç”±
+2ã€ä½¿ç”¨è·¯ç”±åˆ†ç»„çš„æ–¹å¼é…ç½®å‡ºé¡¹ç›®çš„åå°è·¯ç”±é›å½¢
 
 
 Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>['web','admin.login']], function () {
@@ -80,7 +83,7 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>['web','adm
 
 //Route::get('user', ['as' => 'profile', function () {
 //    echo route('profile');  //http://blog.hd/user
-//    return '<h1>ÃüÃûÂ·ÓÉ</h1>';
+//    return '<h1>å‘½åè·¯ç”±</h1>';
 //}]);
 //
 //Route::get('test', [
@@ -112,33 +115,33 @@ Route::group(['middleware' => ['web']], function () {
 
 8--------------------->
 
-×Ô¼ºĞ´Ò»¸öµÇÂ½ÈÏÖ¤µÄÖĞ¼ä¼ş
+è‡ªå·±å†™ä¸€ä¸ªç™»é™†è®¤è¯çš„ä¸­é—´ä»¶
 
 
 
 9--------------------->
 
-Êı¾İ´«µİ
-? 1¡¢with
-? 2¡¢´«²Î
-? 3¡¢compact
+æ•°æ®ä¼ é€’
+? 1ã€with
+? 2ã€ä¼ å‚
+? 3ã€compact
 
-1¡¢×Ô¼ºÍê³ÉÒ»¸öÍêÕûµÄÇëÇó¹ı³Ì
-2¡¢Ê¹ÓÃ²»Í¬µÄ·½·¨ÊµÏÖ´«²Î
+1ã€è‡ªå·±å®Œæˆä¸€ä¸ªå®Œæ•´çš„è¯·æ±‚è¿‡ç¨‹
+2ã€ä½¿ç”¨ä¸åŒçš„æ–¹æ³•å®ç°ä¼ å‚
 
 
 class ViewController extends Controller
 {
     public function index()
     {
-//        $name = "³Â»ª";
+//        $name = "é™ˆå";
 //        $age = 26;
         $data = [
-            'name' => "»ª×Ğ",
+            'name' => "åä»”",
             'age' => 26
         ];
 
-        $title = "³ÂÀÏÊ¦ÕıÔÚ½²½âlaravel¿Î³Ì";
+        $title = "é™ˆè€å¸ˆæ­£åœ¨è®²è§£laravelè¯¾ç¨‹";
 
         return view('my_laravel',compact('data','title'));
 
@@ -147,22 +150,22 @@ class ViewController extends Controller
 }
 
 
-10--------------------->  Êä³ö´íÎó
+10--------------------->  è¾“å‡ºé”™è¯¯
 
 
-bladeÄ£°åÒıÇæ »ù´¡ÓÃ·¨
+bladeæ¨¡æ¿å¼•æ“ åŸºç¡€ç”¨æ³•
 ? {{ $name }}
 ? @{{ name }}
 ? {{ $name or 'Default' }}
 ? {{ isset($name) ? $name : 'Default' }}
 ? {!! $str !!}
 
-²âÊÔbladeÄ£°åÒıÇæµÄ»ù´¡ÓÃ·¨
+æµ‹è¯•bladeæ¨¡æ¿å¼•æ“çš„åŸºç¡€ç”¨æ³•
 
 
 11--------------------->
 
-BladeÄ£°åÒıÇæ Á÷³Ì¿ØÖÆ
+Bladeæ¨¡æ¿å¼•æ“ æµç¨‹æ§åˆ¶
 ? @if
 ? @unless
 ? @for
@@ -171,12 +174,12 @@ BladeÄ£°åÒıÇæ Á÷³Ì¿ØÖÆ
 ? @while
 
 
-¶ÀÁ¢Íê³ÉbaldeÄ£°åÒıÇæµÄÁ÷³Ì¿ØÖÆ²âÊÔ
+ç‹¬ç«‹å®Œæˆbaldeæ¨¡æ¿å¼•æ“çš„æµç¨‹æ§åˆ¶æµ‹è¯•
 
 
 12--------------------->
 
-BladeÄ£°åÒıÇæ ×ÓÊÓÍ¼
+Bladeæ¨¡æ¿å¼•æ“ å­è§†å›¾
 ? @include(common.header)
 ? @include(common.name', ['some' => 'data'])
 ? @extends('layouts.master')
@@ -184,13 +187,13 @@ BladeÄ£°åÒıÇæ ×ÓÊÓÍ¼
 ? @section('sidebar')
 
 
-1¡¢ÓÃinclude·½Ê½ÒıÈëÍøÕ¾¹«¹²Í·²¿ºÍµ×²¿
-2¡¢Ê¹ÓÃÄ£°æ¼Ì³ĞÍê³ÉÁ½¸ö²»Í¬ÍøÒ³µÄ²¼¾Ö
+1ã€ç”¨includeæ–¹å¼å¼•å…¥ç½‘ç«™å…¬å…±å¤´éƒ¨å’Œåº•éƒ¨
+2ã€ä½¿ç”¨æ¨¡ç‰ˆç»§æ‰¿å®Œæˆä¸¤ä¸ªä¸åŒç½‘é¡µçš„å¸ƒå±€
 
 
 13--------------------->
 
-.envÅäÖÃÎÄ¼ş
+.envé…ç½®æ–‡ä»¶
 ? APP_DEBUG=true
 ? APP_KEY=GBlk9461ydHrKysZ4OJ3QzsNqyOa8gR8
 ? DB_HOST=127.0.0.1
@@ -200,21 +203,21 @@ BladeÄ£°åÒıÇæ ×ÓÊÓÍ¼
 ? DB_PASSWORD=secret
 ? SESSION_DRIVER=file
 
-.envº¯Êı
+.envå‡½æ•°
 ? 'debug' => env('APP_DEBUG', false),
-ÅäÖÃÏî¶ÁÈ¡
+é…ç½®é¡¹è¯»å–
 ? config('app.timezone');
 
-? 1¡¢Ê¹ÓÃartisanÃüÁîÖØĞÂÉú³Ékey
-? 2¡¢½«Êı¾İ±íÇ°×ºÅäÖÃµ½.envÎÄ¼şÖĞ
+? 1ã€ä½¿ç”¨artisanå‘½ä»¤é‡æ–°ç”Ÿæˆkey
+? 2ã€å°†æ•°æ®è¡¨å‰ç¼€é…ç½®åˆ°.envæ–‡ä»¶ä¸­
 
 
 14--------------------->
 
-Navicat  -->´´½¨Êı¾İ¿â
+Navicat  -->åˆ›å»ºæ•°æ®åº“
 
 
-.envÅäÖÃÊı¾İ¿âĞÅÏ¢
+.envé…ç½®æ•°æ®åº“ä¿¡æ¯
 ? DB_HOST=127.0.0.1
 ? DB_PORT=3306
 ? DB_DATABASE=homestead
@@ -223,29 +226,37 @@ Navicat  -->´´½¨Êı¾İ¿â
 ? DB_PASSWORD=secret
 
 
-²âÊÔÊı¾İ¿âÊÇ·ñÁ¬½Ó³É¹¦
+æµ‹è¯•æ•°æ®åº“æ˜¯å¦è¿æ¥æˆåŠŸ
 ? DB::connection()->getPdo();
-Êı¾İ±í²Ù×÷
+æ•°æ®è¡¨æ“ä½œ
 ? DB::table('user')->get();
 ? DB::table('user')->where('user',1)->get();
 
-? 1¡¢³É¹¦ÅäÖÃ²¢Á¬½ÓÉÏÊı¾İ¿â
-? 2¡¢×Ô¼ºĞ´ÈëÊı¾İ£¬²¢½øĞĞÊı¾İ²Ù×÷
+? 1ã€æˆåŠŸé…ç½®å¹¶è¿æ¥ä¸Šæ•°æ®åº“
+? 2ã€è‡ªå·±å†™å…¥æ•°æ®ï¼Œå¹¶è¿›è¡Œæ•°æ®æ“ä½œ
 
+create table users(
+id int(11) not null auto_increment,
+name varchar(80) not null,
+primary key(id)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+
+insert into users(id,name) values('1','è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦â€™);
+insert into users(id,name) values('2','è¥¿å®‰ç”µå­ç§‘æŠ€å¤§å­¦â€™);
 
 
 15--------------------->
 
-Ä£ĞÍ´´½¨
+æ¨¡å‹åˆ›å»º
 ? php artisan make:model User
-Êı¾İ±í²Ù×÷
+æ•°æ®è¡¨æ“ä½œ
 ? protected $table="user";
 ? protected $primaryKey = 'user_id';
 ? public $timestamps = false;
 
 
-? 1¡¢Ê¹ÓÃartisanÃüÁî´´½¨Ò»¸öÄ£ĞÍ
-? 2¡¢Ê¹ÓÃormµ÷ÓÃÊı¾İ
+? 1ã€ä½¿ç”¨artisanå‘½ä»¤åˆ›å»ºä¸€ä¸ªæ¨¡å‹
+? 2ã€ä½¿ç”¨ormè°ƒç”¨æ•°æ®
 
 16--------------------->
 

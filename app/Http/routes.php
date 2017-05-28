@@ -2,83 +2,71 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes File
+| Application Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you will register all of the routes in an application.
+| Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/',function(){
     return view('welcome');
 });
 
-
-//http://blog.hd/user/dfsdfds
-Route::get('user/{id}', function ($id) {
-    return 'User '.$id;
-})->where('id', '[0-9]+');
-
-
-//Route::get('posts/{post}/comments/{comment?}', function ($postId=0, $commentId=null) {
-//    return $postId .'----'.$commentId;
+//Route::get('/view',function(){
+//    return view('my_laravel');
 //});
 
-//Route::get('user_{id}', function ($i) {
-//    return 'User '.$i;
-//});
-//
-//Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
-//    return $commentId;
-//});
+//Route::get('view','ViewController@index');
 
-//
-//Route::get('/hd', function () {
-//    echo 'get';
-//});
-//
-//Route::post('/hd', function () {
-//    echo 'post';
-//});
-//
-//Route::put('/hd', function () {
-//    echo 'put';
-//});
-//
-//Route::delete('/hd', function () {
-//    echo 'delete';
-//});
-//
-//Route::patch('/hd', function () {
-//    echo 'patch';
-//});
-//
-//Route::options('/hd', function () {
-//    echo 'options';
-//});
-//
-//
-//Route::match(['get', 'post','patch'], '/test', function () {
-//    echo 'match';
-//});
-//
-//Route::any('foo', function () {
-//    echo 'foo';
-//});
+Route::get('view','ViewController@view');
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
+Route::get('article','ViewController@article');
+
+Route::get('layouts','ViewController@layouts');
+
+Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>['web','admin.login']], function () {
+//    Route::get('login','IndexController@login');
+    Route::get('index','IndexController@index');
+    Route::resource('article', 'ArticleController');
+});
+
+
+//Route::get('admin/login','Admin\IndexController@login');
+//Route::get('admin/index','Admin\IndexController@index');
+
+
+//Route::get('test','Admin\IndexController@index');
+
+
+//Route::get('user', ['as' => 'profile', function () {
+//    echo route('profile');  //http://blog.hd/user
+//    return '<h1>命名路由</h1>';
+//}]);
+//
+//Route::get('test', [
+//    'as' => 'profile', 'uses' => 'Admin\IndexController@index'
+//]);
+
+//Route::get('test', 'Admin\IndexController@index')->name('profile');
+
+//Route::get('test','Admin\IndexController@index');
+
+
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('admin/login','Admin\IndexController@login');
+
+//    Route::get('/',function(){
+//        session(['key'=>456]);
+//        return view('welcome');
+//    });
+
+    Route::get('/test',function(){
+        echo session('key');
+        return 'test';
+    });
 });
