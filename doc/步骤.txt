@@ -147,4 +147,162 @@ class ViewController extends Controller
 }
 
 
-10--------------------->
+10--------------------->  输出错误
+
+
+blade模板引擎 基础用法
+? {{ $name }}
+? @{{ name }}
+? {{ $name or 'Default' }}
+? {{ isset($name) ? $name : 'Default' }}
+? {!! $str !!}
+
+测试blade模板引擎的基础用法
+
+
+11--------------------->
+
+Blade模板引擎 流程控制
+? @if
+? @unless
+? @for
+? @foreach
+? @forelse
+? @while
+
+
+独立完成balde模板引擎的流程控制测试
+
+
+12--------------------->
+
+Blade模板引擎 子视图
+? @include(common.header)
+? @include(common.name', ['some' => 'data'])
+? @extends('layouts.master')
+? @yield('title')
+? @section('sidebar')
+
+
+1、用include方式引入网站公共头部和底部
+2、使用模版继承完成两个不同网页的布局
+
+
+13--------------------->
+
+.env配置文件
+? APP_DEBUG=true
+? APP_KEY=GBlk9461ydHrKysZ4OJ3QzsNqyOa8gR8
+? DB_HOST=127.0.0.1
+? DB_PORT=3306
+? DB_DATABASE=homestead
+? DB_USERNAME=homestead
+? DB_PASSWORD=secret
+? SESSION_DRIVER=file
+
+.env函数
+? 'debug' => env('APP_DEBUG', false),
+配置项读取
+? config('app.timezone');
+
+? 1、使用artisan命令重新生成key
+? 2、将数据表前缀配置到.env文件中
+
+
+14--------------------->
+
+Navicat  -->创建数据库
+
+
+.env配置数据库信息
+? DB_HOST=127.0.0.1
+? DB_PORT=3306
+? DB_DATABASE=homestead
+? DB_PREFIX=blog_
+? DB_USERNAME=homestead
+? DB_PASSWORD=secret
+
+
+测试数据库是否连接成功
+? DB::connection()->getPdo();
+数据表操作
+? DB::table('user')->get();
+? DB::table('user')->where('user',1)->get();
+
+? 1、成功配置并连接上数据库
+? 2、自己写入数据，并进行数据操作
+
+
+
+15--------------------->
+
+模型创建
+? php artisan make:model User
+数据表操作
+? protected $table="user";
+? protected $primaryKey = 'user_id';
+? public $timestamps = false;
+
+
+? 1、使用artisan命令创建一个模型
+? 2、使用orm调用数据
+
+16--------------------->
+
+
+
+
+
+
+
+
+
+
+
+17--------------------->
+
+
+
+
+
+
+
+
+
+
+
+18--------------------->
+
+
+
+
+
+
+
+
+
+
+
+19--------------------->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
