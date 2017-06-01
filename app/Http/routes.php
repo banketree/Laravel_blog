@@ -11,62 +11,16 @@
 |
 */
 
-
-Route::get('/',function(){
-    return view('welcome');
-});
-
-//Route::get('/view',function(){
-//    return view('my_laravel');
-//});
-
-//Route::get('view','ViewController@index');
-
-Route::get('view','ViewController@view');
-
-Route::get('article','ViewController@article');
-
-Route::get('layouts','ViewController@layouts');
-
-Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>['web','admin.login']], function () {
-//    Route::get('login','IndexController@login');
-    Route::get('index','IndexController@index');
-    Route::resource('article', 'ArticleController');
-});
-
-
-//Route::get('admin/login','Admin\IndexController@login');
-//Route::get('admin/index','Admin\IndexController@index');
-
-
-//Route::get('test','Admin\IndexController@index');
-
-
-//Route::get('user', ['as' => 'profile', function () {
-//    echo route('profile');  //http://blog.hd/user
-//    return '<h1>命名路由</h1>';
-//}]);
-//
-//Route::get('test', [
-//    'as' => 'profile', 'uses' => 'Admin\IndexController@index'
-//]);
-
-//Route::get('test', 'Admin\IndexController@index')->name('profile');
-
-//Route::get('test','Admin\IndexController@index');
-
-
-
 Route::group(['middleware' => ['web']], function () {
-    Route::get('admin/login','Admin\IndexController@login');
 
-//    Route::get('/',function(){
-//        session(['key'=>456]);
-//        return view('welcome');
-//    });
-
-    Route::get('/test',function(){
-        echo session('key');
-        return 'test';
+    Route::get('/', function () {
+        echo  "123";
+        return view('welcome');
     });
+
+    Route::any('admin/crypt', 'Admin\LoginController@crypt');
+
+    Route::any('admin/login', 'Admin\LoginController@login');
+    Route::get('admin/code', 'Admin\LoginController@code');
+
 });
