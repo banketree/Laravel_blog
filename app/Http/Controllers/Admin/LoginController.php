@@ -45,4 +45,6 @@ class LoginController extends CommonController
         $code = new \Code;
         $code->make();
     }
+
+
 }
