@@ -9,10 +9,11 @@ class Category extends Model
     protected $table='category';
     protected $primaryKey='cate_id';
     public $timestamps=false;
+    protected $guarded=[];
 
     public function tree()
     {
-        $categorys = $this->all();
+        $categorys = $this->orderBy('cate_order','asc')->get();
         return $this->getTree($categorys,'cate_name','cate_id','cate_pid');
     }
 
